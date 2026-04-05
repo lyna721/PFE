@@ -1,0 +1,170 @@
+/* --- BASE STYLES --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* --- LAYOUT & SIDEBAR --- */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1a1a1a; /* Dark professional theme */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.sidebar a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    padding: 12px 10px;
+    border-bottom: 1px solid #333;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    color: white;
+    background: #333;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.main {
+    margin-left: 250px; /* Aligned with sidebar width */
+    flex: 1;
+    padding: 40px;
+    background-color: #fafafa;
+}
+
+/* --- FORMS & INPUTS --- */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"],
+textarea, 
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    width: 100%;
+    background-color: #0095f6; /* Action Blue */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #0077c8;
+}
+
+/* --- PRODUCT FEED & CARDS --- */
+.feed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* --- DESIGNER SPECIFIC FIXES --- */
+
+/* THE TRANSPARENCY FIX */
+#inner-logo { 
+    width: 100%; 
+    height: 100%;
+    display: block;
+    /* This 'Multiply' is the key for white backgrounds */
+    mix-blend-mode: multiply; 
+    
+    /* ADD THIS FILTER: It bleaches stubborn greyish whites so they disappear */
+    filter: contrast(1.1) brightness(1.1); 
+    
+    user-select: none;
+    cursor: move;
+}
+
+/* Ensures the designer preview has no grey or white backgrounds interfering */
+#design-container, #logo-preview {
+    background: transparent !important;
+    border-color: rgba(0,0,0,0.1);
+}
+
+/* Home feed product images consistency */
+.product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: white;
+}
+
+/* --- MISC --- */
+.badge {
+    background: #ff3b30;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.user-info {
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
